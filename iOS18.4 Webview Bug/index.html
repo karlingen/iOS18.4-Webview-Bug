@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Rows</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .row {
+            padding: 15px;
+            margin: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        const colors = [
+            "red", "blue", "green", "yellow", "purple", "orange", "pink", "brown", "cyan", "magenta",
+            "lime", "teal", "indigo", "violet", "gold", "silver", "maroon", "navy", "olive", "coral",
+            "turquoise", "beige", "lavender", "salmon", "plum", "khaki", "orchid", "slateblue", "peru", "tan",
+            "chocolate", "crimson", "darkgreen", "deeppink", "dodgerblue", "firebrick", "forestgreen", "fuchsia", "gainsboro", "hotpink",
+            "ivory", "lightcoral", "lightseagreen", "lightskyblue", "mediumaquamarine", "mediumvioletred", "mistyrose", "orangered", "peachpuff", "seagreen"
+        ];
+        const container = document.getElementById("container");
+        let activeText = null;
+
+        colors.forEach(color => {
+            const row = document.createElement("div");
+            row.className = "row";
+            row.style.backgroundColor = color;
+            
+            const text = document.createElement("span");
+            text.textContent = color;
+            text.className = "hidden";
+            row.appendChild(text);
+            
+            row.addEventListener("touchend", () => {
+                if (activeText) activeText.classList.add("hidden");
+                text.classList.remove("hidden");
+                activeText = text;
+            });
+            
+            container.appendChild(row);
+        });
+    </script>
+</body>
+</html>
