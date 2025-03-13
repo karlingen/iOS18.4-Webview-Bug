@@ -6,3 +6,9 @@ Running this project in a simulator demonstrates the problem.
 Tapping a row triggers a `touchend` event on the wrong row.
 
 A workaround is to scroll a few rows down before tapping.
+
+# Requirements
+* Xcode 16.3 beta 2 (16E5121h)
+
+# Example
+![Demonstration](./output.gif)
