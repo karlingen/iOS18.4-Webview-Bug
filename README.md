@@ -1,3 +1,7 @@
+**UPDATE: This got fixed in https://github.com/WebKit/WebKit/pull/42493**
+
+------------------------
+
 Sample project demonstrating an issue with touch events in a web view on iOS 18.4 Beta 2.
 
 # Requirements
